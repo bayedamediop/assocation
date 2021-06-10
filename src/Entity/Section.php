@@ -30,6 +30,10 @@ use Symfony\Component\Serializer\Annotation\Groups;
  *          "path" = "/admin/section/{id}/membres",
  *          "normalization_context"={"groups"={"section/membres:read"}},
  *      },
+ *      "put"={
+ *          "method"= "PUT",
+ *          "path" = "/admin/membre/{id}",
+ *      },
  *      },
  *     )
  */
