@@ -2,11 +2,37 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\CotiserRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass=CotiserRepository::class)
+ * @ApiResource(
+ *
+ * collectionOperations={
+ *      "post"={
+ *          "method"= "POST",
+ *          "path" = "/admin/section",
+ *          "denormalization_context"={"groups"={"section:wreat"}},
+ *      },
+ *      "add_cotiser"={
+ *                  "route_name"="addCotiser",
+ *              }
+ * },
+ *itemOperations={
+ *
+ *      "lidte_des-membre_d1_section"={
+ *          "method"= "GET",
+ *          "path" = "/admin/section/{id}/membres",
+ *          "normalization_context"={"groups"={"section/membres:read"}},
+ *      },
+ *      "put"={
+ *          "method"= "PUT",
+ *          "path" = "/admin/membre/{id}",
+ *      },
+ *      },
+ *     )
  */
 class Cotiser
 {

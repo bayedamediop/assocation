@@ -91,7 +91,7 @@ class MembreController extends AbstractController
         if ($membre) {
             return $this->json($membre,200,[],["groups"=>"membres:read"]);
         }else{
-            return $this->json("User ou Comtpt competence inexistant");
+            return $this->json("le Membre n' existe pas dans la basse de donnée");
         }
 
     }
